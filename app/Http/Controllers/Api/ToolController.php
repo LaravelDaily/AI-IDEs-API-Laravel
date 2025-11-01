@@ -12,7 +12,7 @@ class ToolController extends Controller
 {
     public function index(Request $request): AnonymousResourceCollection
     {
-        $query = Tool::query()->with('vendor', 'pricingPlans');
+        $query = Tool::query()->with('vendor');
 
         // Load versions if requested (default true)
         if ($request->boolean('include_versions', true)) {
@@ -29,27 +29,6 @@ class ToolController extends Controller
                 $query->orderBy('name', $orderDirection);
                 break;
 
-            case 'cheapest_plan':
-                $query->leftJoin('pricing_plans', 'tools.id', '=', 'pricing_plans.tool_id')
-                    ->where(function ($q) {
-                        $q->where('pricing_plans.price', '>', 0)
-                            ->orWhereNull('pricing_plans.price');
-                    })
-                    ->where('pricing_plans.billing_period', 'monthly')
-                    ->groupBy('tools.id')
-                    ->orderByRaw('MIN(pricing_plans.price) ASC')
-                    ->select('tools.*');
-                break;
-
-            case 'most_expensive_plan':
-                $query->leftJoin('pricing_plans', 'tools.id', '=', 'pricing_plans.tool_id')
-                    ->where('pricing_plans.price', '>', 0)
-                    ->where('pricing_plans.billing_period', 'monthly')
-                    ->groupBy('tools.id')
-                    ->orderByRaw('MAX(pricing_plans.price) DESC')
-                    ->select('tools.*');
-                break;
-
             case 'latest_version':
                 $query->leftJoin('versions', 'tools.id', '=', 'versions.tool_id')
                     ->groupBy('tools.id')
@@ -64,8 +43,8 @@ class ToolController extends Controller
     }
 
     /**
-    * @urlParam slug string required Slug of the tool. Example: cursor
-    */
+     * @urlParam slug string required Slug of the tool. Example: cursor
+     */
     public function show(Request $request, string $slug): ToolResource
     {
         $query = Tool::query()->where('slug', $slug)->with('vendor');
@@ -79,8 +58,6 @@ class ToolController extends Controller
                 $query->with(['versions' => function ($query) {
                     $query->orderBy('release_date', 'desc');
                 }]);
-            } elseif ($relation === 'pricing') {
-                $query->with('pricingPlans');
             }
         }
 

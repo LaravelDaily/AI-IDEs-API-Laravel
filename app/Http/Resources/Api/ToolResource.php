@@ -23,7 +23,6 @@ class ToolResource extends JsonResource
             'vendor' => [
                 'name' => $this->vendor->name,
             ],
-            'pricing_plans' => PricingPlanResource::collection($this->whenLoaded('pricingPlans')),
             'versions' => VersionResource::collection($this->whenLoaded('versions')),
         ];
     }

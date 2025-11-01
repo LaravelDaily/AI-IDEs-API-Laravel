@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\PricingPlan;
 use App\Models\Tool;
 use App\Models\Version;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -9,7 +8,6 @@ uses(RefreshDatabase::class);
 
 test('it returns a list of tools with default settings', function () {
     $tool = Tool::factory()
-        ->has(PricingPlan::factory()->count(2))
         ->has(Version::factory()->count(3))
         ->create(['name' => 'Test Tool']);
 
@@ -26,7 +24,6 @@ test('it returns a list of tools with default settings', function () {
                     'website_url',
                     'short_description',
                     'vendor' => ['name'],
-                    'pricing_plans',
                     'versions',
                 ],
             ],
@@ -66,17 +63,6 @@ test('it excludes versions when include_versions is false', function () {
     expect($response->json('data.0.versions'))->toBeEmpty();
 });
 
-test('it always includes pricing plans', function () {
-    $tool = Tool::factory()
-        ->has(PricingPlan::factory()->count(3))
-        ->create();
-
-    $response = $this->getJson('/api/tools');
-
-    $response->assertSuccessful();
-    expect($response->json('data.0.pricing_plans'))->toHaveCount(3);
-});
-
 test('it orders tools by name ascending by default', function () {
     Tool::factory()->create(['name' => 'Zebra Tool']);
     Tool::factory()->create(['name' => 'Alpha Tool']);
@@ -99,40 +85,6 @@ test('it orders tools by name descending', function () {
     $response->assertSuccessful();
     $names = collect($response->json('data'))->pluck('name')->toArray();
     expect($names)->toBe(['Zebra Tool', 'Beta Tool', 'Alpha Tool']);
-});
-
-test('it orders tools by cheapest monthly plan', function () {
-    $tool1 = Tool::factory()->create(['name' => 'Expensive Tool']);
-    PricingPlan::factory()->create(['tool_id' => $tool1->id, 'billing_period' => 'monthly', 'price' => 50.00]);
-
-    $tool2 = Tool::factory()->create(['name' => 'Cheap Tool']);
-    PricingPlan::factory()->create(['tool_id' => $tool2->id, 'billing_period' => 'monthly', 'price' => 10.00]);
-
-    $tool3 = Tool::factory()->create(['name' => 'Mid Tool']);
-    PricingPlan::factory()->create(['tool_id' => $tool3->id, 'billing_period' => 'monthly', 'price' => 30.00]);
-
-    $response = $this->getJson('/api/tools?order_by=cheapest_plan');
-
-    $response->assertSuccessful();
-    $names = collect($response->json('data'))->pluck('name')->toArray();
-    expect($names)->toBe(['Cheap Tool', 'Mid Tool', 'Expensive Tool']);
-});
-
-test('it orders tools by most expensive monthly plan', function () {
-    $tool1 = Tool::factory()->create(['name' => 'Expensive Tool']);
-    PricingPlan::factory()->create(['tool_id' => $tool1->id, 'billing_period' => 'monthly', 'price' => 50.00]);
-
-    $tool2 = Tool::factory()->create(['name' => 'Cheap Tool']);
-    PricingPlan::factory()->create(['tool_id' => $tool2->id, 'billing_period' => 'monthly', 'price' => 10.00]);
-
-    $tool3 = Tool::factory()->create(['name' => 'Mid Tool']);
-    PricingPlan::factory()->create(['tool_id' => $tool3->id, 'billing_period' => 'monthly', 'price' => 30.00]);
-
-    $response = $this->getJson('/api/tools?order_by=most_expensive_plan');
-
-    $response->assertSuccessful();
-    $names = collect($response->json('data'))->pluck('name')->toArray();
-    expect($names)->toBe(['Expensive Tool', 'Mid Tool', 'Cheap Tool']);
 });
 
 test('it orders tools by latest version release date', function () {
@@ -181,17 +133,15 @@ test('show endpoint returns 404 for non-existent tool', function () {
     $response->assertNotFound();
 });
 
-test('show endpoint does not include versions or pricing without include parameter', function () {
+test('show endpoint does not include versions without include parameter', function () {
     $tool = Tool::factory()
         ->has(Version::factory()->count(3))
-        ->has(PricingPlan::factory()->count(2))
         ->create(['slug' => 'test-tool']);
 
     $response = $this->getJson('/api/tools/test-tool');
 
     $response->assertSuccessful();
     expect($response->json('data.versions'))->toBeEmpty();
-    expect($response->json('data.pricing_plans'))->toBeEmpty();
 });
 
 test('show endpoint includes versions when requested', function () {
@@ -208,28 +158,4 @@ test('show endpoint includes versions when requested', function () {
     expect($versions)->toHaveCount(3);
     expect($versions[0]['release_date'])->toBe('2024-03-01');
     expect($versions[2]['release_date'])->toBe('2024-01-01');
-});
-
-test('show endpoint includes pricing when requested', function () {
-    $tool = Tool::factory()
-        ->has(PricingPlan::factory()->count(2))
-        ->create(['slug' => 'test-tool']);
-
-    $response = $this->getJson('/api/tools/test-tool?include=pricing');
-
-    $response->assertSuccessful();
-    expect($response->json('data.pricing_plans'))->toHaveCount(2);
-});
-
-test('show endpoint includes both versions and pricing when requested', function () {
-    $tool = Tool::factory()
-        ->has(Version::factory()->count(3))
-        ->has(PricingPlan::factory()->count(2))
-        ->create(['slug' => 'test-tool']);
-
-    $response = $this->getJson('/api/tools/test-tool?include=versions,pricing');
-
-    $response->assertSuccessful();
-    expect($response->json('data.versions'))->toHaveCount(3);
-    expect($response->json('data.pricing_plans'))->toHaveCount(2);
 });
