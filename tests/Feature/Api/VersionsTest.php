@@ -144,7 +144,7 @@ test('show endpoint does not return version from different tool', function () {
     $response2->assertSuccessful();
 });
 
-test('latest endpoint returns the latest version for each tool', function () {
+test('latest endpoint returns the latest 10 versions overall', function () {
     $tool1 = Tool::factory()->create(['slug' => 'tool-1']);
     $tool2 = Tool::factory()->create(['slug' => 'tool-2']);
     $tool3 = Tool::factory()->create(['slug' => 'tool-3']);
@@ -163,7 +163,7 @@ test('latest endpoint returns the latest version for each tool', function () {
     $response = $this->getJson('/api/versions');
 
     $response->assertSuccessful()
-        ->assertJsonCount(3, 'data')
+        ->assertJsonCount(5, 'data')
         ->assertJsonStructure([
             'data' => [
                 '*' => [
@@ -177,15 +177,21 @@ test('latest endpoint returns the latest version for each tool', function () {
 
     $versions = $response->json('data');
 
-    // Should return latest version for each tool, ordered by release date desc
+    // Should return all versions ordered by release date desc
     expect($versions[0]['version'])->toBe('3.0.0');
     expect($versions[0]['release_date'])->toBe('2024-05-01');
 
     expect($versions[1]['version'])->toBe('1.5.0');
     expect($versions[1]['release_date'])->toBe('2024-04-01');
 
-    expect($versions[2]['version'])->toBe('2.0.0');
-    expect($versions[2]['release_date'])->toBe('2024-02-01');
+    expect($versions[2]['version'])->toBe('1.0.0');
+    expect($versions[2]['release_date'])->toBe('2024-03-01');
+
+    expect($versions[3]['version'])->toBe('2.0.0');
+    expect($versions[3]['release_date'])->toBe('2024-02-01');
+
+    expect($versions[4]['version'])->toBe('1.0.0');
+    expect($versions[4]['release_date'])->toBe('2024-01-01');
 });
 
 test('latest endpoint returns empty array if no tools have versions', function () {
@@ -197,7 +203,7 @@ test('latest endpoint returns empty array if no tools have versions', function (
         ->assertJsonCount(0, 'data');
 });
 
-test('latest endpoint only returns one version per tool', function () {
+test('latest endpoint can return multiple versions from same tool', function () {
     $tool = Tool::factory()->create();
 
     Version::factory()->create(['tool_id' => $tool->id, 'version' => '1.0.0', 'release_date' => '2024-01-01']);
@@ -207,9 +213,11 @@ test('latest endpoint only returns one version per tool', function () {
     $response = $this->getJson('/api/versions');
 
     $response->assertSuccessful()
-        ->assertJsonCount(1, 'data');
+        ->assertJsonCount(3, 'data');
 
     expect($response->json('data.0.version'))->toBe('3.0.0');
+    expect($response->json('data.1.version'))->toBe('2.0.0');
+    expect($response->json('data.2.version'))->toBe('1.0.0');
 });
 
 test('latest endpoint excludes tools without versions', function () {
@@ -224,4 +232,26 @@ test('latest endpoint excludes tools without versions', function () {
         ->assertJsonCount(1, 'data');
 
     expect($response->json('data.0.version'))->toBe('1.0.0');
+});
+
+test('latest endpoint limits results to 10 versions', function () {
+    $tool = Tool::factory()->create();
+
+    // Create 15 versions
+    for ($i = 1; $i <= 15; $i++) {
+        Version::factory()->create([
+            'tool_id' => $tool->id,
+            'version' => "{$i}.0.0",
+            'release_date' => now()->subDays(15 - $i)->format('Y-m-d'),
+        ]);
+    }
+
+    $response = $this->getJson('/api/versions');
+
+    $response->assertSuccessful()
+        ->assertJsonCount(10, 'data');
+
+    // Should return the 10 most recent versions (15.0.0 down to 6.0.0)
+    expect($response->json('data.0.version'))->toBe('15.0.0');
+    expect($response->json('data.9.version'))->toBe('6.0.0');
 });

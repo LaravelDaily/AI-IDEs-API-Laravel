@@ -10,36 +10,29 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class VersionController extends Controller
 {
-    public function latest(): AnonymousResourceCollection
+    /**
+    * @urlParam slug string optional Slug of the tool. Example: cursor
+    */
+    public function index(?string $slug = null): AnonymousResourceCollection
     {
-        // Get all tools with their latest version
-        $tools = Tool::query()
-            ->with(['versions' => function ($query) {
-                $query->orderBy('release_date', 'desc')->limit(1);
-            }])
-            ->has('versions')
-            ->get();
+        $query = Version::query()->orderBy('release_date', 'desc');
 
-        // Extract the latest version from each tool
-        $versions = $tools->map(function ($tool) {
-            return $tool->versions->first();
-        })->sortByDesc('release_date')->values();
+        if ($slug === null) {
+            // Return latest 10 versions across all tools
+            $versions = $query->limit(10)->get();
+        } else {
+            // Return all versions for the specific tool
+            $tool = Tool::query()->where('slug', $slug)->firstOrFail();
+            $versions = $query->where('tool_id', $tool->id)->get();
+        }
 
         return VersionResource::collection($versions);
     }
 
-    public function index(string $slug): AnonymousResourceCollection
-    {
-        $tool = Tool::query()->where('slug', $slug)->firstOrFail();
-
-        $versions = Version::query()
-            ->where('tool_id', $tool->id)
-            ->orderBy('release_date', 'desc')
-            ->get();
-
-        return VersionResource::collection($versions);
-    }
-
+    /**
+    * @urlParam slug string required Slug of the tool. Example: cursor
+    * @urlParam version string required Version number. Example: 2.0
+    */
     public function show(string $slug, string $version): VersionResource
     {
         $tool = Tool::query()->where('slug', $slug)->firstOrFail();

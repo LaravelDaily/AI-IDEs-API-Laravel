@@ -63,6 +63,9 @@ class ToolController extends Controller
         return ToolResource::collection($tools);
     }
 
+    /**
+    * @urlParam slug string required Slug of the tool. Example: cursor
+    */
     public function show(Request $request, string $slug): ToolResource
     {
         $query = Tool::query()->where('slug', $slug)->with('vendor');

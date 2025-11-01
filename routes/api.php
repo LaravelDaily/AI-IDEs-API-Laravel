@@ -2,15 +2,10 @@
 
 use App\Http\Controllers\Api\ToolController;
 use App\Http\Controllers\Api\VersionController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
-
 Route::middleware('throttle:60,60')->group(function (): void {
-    Route::get('/versions', [VersionController::class, 'latest']);
+    Route::get('/versions', [VersionController::class, 'index']);
 
     Route::get('/tools', [ToolController::class, 'index']);
     Route::get('/tools/{slug}', [ToolController::class, 'show']);
