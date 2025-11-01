@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\PricingPlan;
 use App\Models\Tool;
 use App\Models\Vendor;
-use App\Models\Version;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ToolSeeder extends Seeder
@@ -27,6 +26,18 @@ class ToolSeeder extends Seeder
             'website_url' => 'https://cursor.com',
             'short_description' => '',
         ]);
+        PricingPlan::create([
+            'tool_id' => $toolCursor->id,
+            'name' => 'Pro',
+            'billing_period' => 'monthly',
+            'currency' => 'USD',
+            'price' => 20,
+            'last_updated_date' => '2025-11-01',
+            'features' => 'Extended limits on Agent
+Unlimited Tab completions
+Background Agents
+Maximum context windows',
+        ]);
 
         $toolClaudeCode = Tool::create([
             'vendor_id' => $vendorAnthropic->id,
@@ -36,6 +47,15 @@ class ToolSeeder extends Seeder
             'website_url' => 'https://www.claude.com/product/claude-code',
             'short_description' => '',
         ]);
+        PricingPlan::create([
+            'tool_id' => $toolClaudeCode->id,
+            'name' => 'Anthropic Pro',
+            'billing_period' => 'monthly',
+            'currency' => 'USD',
+            'price' => 20,
+            'last_updated_date' => '2025-11-01',
+            'features' => 'Access Claude Code on the web and in your terminal',
+        ]);
 
         $toolCodexCLI = Tool::create([
             'vendor_id' => $vendorOpenAI->id,
@@ -44,6 +64,15 @@ class ToolSeeder extends Seeder
             'category' => 'CLI',
             'website_url' => 'https://developers.openai.com/codex/cli/',
             'short_description' => '',
+        ]);
+        PricingPlan::create([
+            'tool_id' => $toolCodexCLI->id,
+            'name' => 'ChatGPT Plus',
+            'billing_period' => 'monthly',
+            'currency' => 'USD',
+            'price' => 25,
+            'last_updated_date' => '2025-11-01',
+            'features' => 'Access Codex CLI on the web and in your terminal',
         ]);
     }
 }

@@ -55,22 +55,12 @@ This project will be used as a **demo API** for a Laravel tutorial aimed at deve
 
 1. (done) Installed Laravel and API
 2. (done) DB structure with Models, Migrations, dummy Seede
-3. Seed real data of all versions of the tools
+3. (done) Seed real data of all versions of the tools
 4. Build API endpoints one-by-one
 5. Pagination, Filters
 6. Caching
 7. Rate limiting
 8. API docs
-
----
-
-## Seeding Data Prompt
-
-Here's the raw Markdown file from Claude Code changelog. Transform it into ClaudeCodeVersionSeeder according to Version model structure, and add it to main DatabaseSeeder.
-
-Here's the raw Markdown file from Cursor changelog. Transform it into CursorVersionSeeder according to Version model structure, and add it to main DatabaseSeeder.
-
-Here's the raw Markdown file from Codex CLI changelog. Transform it into CodexCLIVersionSeeder according to Version model structure, and add it to main DatabaseSeeder.
 
 ---
 
