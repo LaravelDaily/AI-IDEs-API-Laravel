@@ -56,8 +56,8 @@ This project will be used as a **demo API** for a Laravel tutorial aimed at deve
 1. (done) Installed Laravel and API
 2. (done) DB structure with Models, Migrations, dummy Seede
 3. (done) Seed real data of all versions of the tools
-4. Build API endpoints one-by-one
-5. Pagination, Filters
+4. (done) Build API endpoints one-by-one
+5. (done) Pagination, Filters
 6. Caching
 7. Rate limiting
 8. API docs

@@ -21,6 +21,11 @@ class ClaudeCodeVersionSeeder extends Seeder
 
         $versions = [
             [
+                'version' => '2.0.31',
+                'description' => '- Windows: native installation uses shift+tab as shortcut for mode switching, instead of alt+m\nVertex: add support for Web Search on supported models\nVSCode: Adding the respectGitIgnore configuration to include .gitignored files in file searches (defaults to true)\nFixed a bug with subagents and MCP servers related to "Tool names must be unique" error\nFixed issue causing /compact to fail with prompt_too_long by making it respect existing compact boundaries\nFixed plugin uninstall not removing plugins',
+                'release_date' => '2025-11-01',
+            ],
+            [
                 'version' => '2.0.30',
                 'description' => "- Added helpful hint to run `security unlock-keychain` when encountering API key errors on macOS with locked keychain\n- Added `allowUnsandboxedCommands` sandbox setting to disable the dangerouslyDisableSandbox escape hatch at policy level\n- Added `disallowedTools` field to custom agent definitions for explicit tool blocking\n- Added prompt-based stop hooks\n- VSCode: Added respectGitIgnore configuration to include .gitignored files in file searches (defaults to true)\n- Enabled SSE MCP servers on native build\n- Deprecated output styles. Review options in `/output-style` and use --system-prompt, --append-system-prompt, CLAUDE.md, or plugins instead\n- Removed support for custom ripgrep configuration, resolving an issue where Search returns no results and config discovery fails\n- Fixed Explore agent creating unwanted .md investigation files during codebase exploration\n- Fixed a bug where `/context` would sometimes fail with \"max_tokens must be greater than thinking.budget_tokens\" error message\n- Fixed `--mcp-config` flag to correctly override file-based MCP configurations\n- Fixed bug that saved session permissions to local settings\n- Fixed MCP tools not being available to sub-agents\n- Fixed hooks and plugins not executing when using --dangerously-skip-permissions flag\n- Fixed delay when navigating through typeahead suggestions with arrow keys\n- VSCode: Restored selection indicator in input footer showing current file or code selection status",
                 'release_date' => '2025-10-31',

@@ -62,4 +62,27 @@ class ToolController extends Controller
 
         return ToolResource::collection($tools);
     }
+
+    public function show(Request $request, string $slug): ToolResource
+    {
+        $query = Tool::query()->where('slug', $slug)->with('vendor');
+
+        // Parse include parameter to load requested relationships
+        $include = $request->input('include', '');
+        $includes = array_filter(array_map('trim', explode(',', $include)));
+
+        foreach ($includes as $relation) {
+            if ($relation === 'versions') {
+                $query->with(['versions' => function ($query) {
+                    $query->orderBy('release_date', 'desc');
+                }]);
+            } elseif ($relation === 'pricing') {
+                $query->with('pricingPlans');
+            }
+        }
+
+        $tool = $query->firstOrFail();
+
+        return new ToolResource($tool);
+    }
 }
