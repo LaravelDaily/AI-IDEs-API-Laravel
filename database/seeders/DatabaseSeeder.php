@@ -15,5 +15,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call(ToolSeeder::class);
+        $this->call(ClaudeCodeVersionSeeder::class);
+        $this->call(CodexCLIVersionSeeder::class);
+        $this->call(CursorVersionSeeder::class);
     }
 }

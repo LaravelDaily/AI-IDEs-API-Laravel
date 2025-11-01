@@ -45,22 +45,5 @@ class ToolSeeder extends Seeder
             'website_url' => 'https://developers.openai.com/codex/cli/',
             'short_description' => '',
         ]);
-
-        Version::create([
-            'tool_id' => $toolCursor->id,
-            'version' => '2.0',
-            'description' => '',
-            'changelog_url' => '',
-            'download_url' => '',
-            'release_date' => '2025-10-30',
-        ]);
-
-        Version::create([
-            'tool_id' => $toolClaudeCode->id,
-            'version' => '2.0.30',
-            'description' => '',
-            'changelog_url' => 'https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2030',
-            'release_date' => '2025-10-29',
-        ]);
     }
 }
