@@ -9,9 +9,11 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::get('/versions', [VersionController::class, 'latest']);
+Route::middleware('throttle:60,60')->group(function (): void {
+    Route::get('/versions', [VersionController::class, 'latest']);
 
-Route::get('/tools', [ToolController::class, 'index']);
-Route::get('/tools/{slug}', [ToolController::class, 'show']);
-Route::get('/tools/{slug}/versions', [VersionController::class, 'index']);
-Route::get('/tools/{slug}/versions/{version}', [VersionController::class, 'show']);
+    Route::get('/tools', [ToolController::class, 'index']);
+    Route::get('/tools/{slug}', [ToolController::class, 'show']);
+    Route::get('/tools/{slug}/versions', [VersionController::class, 'index']);
+    Route::get('/tools/{slug}/versions/{version}', [VersionController::class, 'show']);
+});
