@@ -167,7 +167,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
+x-ratelimit-remaining: 59
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -369,7 +369,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
+x-ratelimit-remaining: 59
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -384,17 +384,6 @@ access-control-allow-origin: *
             &quot;vendor&quot;: {
                 &quot;name&quot;: &quot;Anthropic&quot;
             },
-            &quot;pricing_plans&quot;: [
-                {
-                    &quot;name&quot;: &quot;Anthropic Pro&quot;,
-                    &quot;billing_period&quot;: &quot;monthly&quot;,
-                    &quot;price&quot;: &quot;20.00&quot;,
-                    &quot;currency&quot;: &quot;USD&quot;,
-                    &quot;features&quot;: &quot;Access Claude Code on the web and in your terminal&quot;,
-                    &quot;is_deprecated&quot;: false,
-                    &quot;last_updated_date&quot;: &quot;2025-11-01&quot;
-                }
-            ],
             &quot;versions&quot;: [
                 {
                     &quot;version&quot;: &quot;2.0.30&quot;,
@@ -437,17 +426,6 @@ access-control-allow-origin: *
             &quot;vendor&quot;: {
                 &quot;name&quot;: &quot;OpenAI&quot;
             },
-            &quot;pricing_plans&quot;: [
-                {
-                    &quot;name&quot;: &quot;ChatGPT Plus&quot;,
-                    &quot;billing_period&quot;: &quot;monthly&quot;,
-                    &quot;price&quot;: &quot;25.00&quot;,
-                    &quot;currency&quot;: &quot;USD&quot;,
-                    &quot;features&quot;: &quot;Access Codex CLI on the web and in your terminal&quot;,
-                    &quot;is_deprecated&quot;: false,
-                    &quot;last_updated_date&quot;: &quot;2025-11-01&quot;
-                }
-            ],
             &quot;versions&quot;: [
                 {
                     &quot;version&quot;: &quot;0.53.0&quot;,
@@ -490,17 +468,6 @@ access-control-allow-origin: *
             &quot;vendor&quot;: {
                 &quot;name&quot;: &quot;Cursor&quot;
             },
-            &quot;pricing_plans&quot;: [
-                {
-                    &quot;name&quot;: &quot;Pro&quot;,
-                    &quot;billing_period&quot;: &quot;monthly&quot;,
-                    &quot;price&quot;: &quot;20.00&quot;,
-                    &quot;currency&quot;: &quot;USD&quot;,
-                    &quot;features&quot;: &quot;Extended limits on Agent\nUnlimited Tab completions\nBackground Agents\nMaximum context windows&quot;,
-                    &quot;is_deprecated&quot;: false,
-                    &quot;last_updated_date&quot;: &quot;2025-11-01&quot;
-                }
-            ],
             &quot;versions&quot;: [
                 {
                     &quot;version&quot;: &quot;2.0&quot;,
@@ -651,7 +618,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
+x-ratelimit-remaining: 59
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -801,7 +768,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
+x-ratelimit-remaining: 59
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
@@ -967,7 +934,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
+x-ratelimit-remaining: 59
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
