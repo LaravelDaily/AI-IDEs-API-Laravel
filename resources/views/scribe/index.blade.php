@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://ai-api.test";
+        var tryItOutBaseUrl = "https://ai-ide-api.on-forge.com/";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -97,7 +97,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: November 1, 2025</li>
+        <li>Last updated: November 2, 2025</li>
     </ul>
 </div>
 
@@ -107,7 +107,7 @@
         <h1 id="introduction">Introduction</h1>
 <p>Documentation for the public API of AI IDEs and their versions</p>
 <aside>
-    <strong>Base URL</strong>: <code>http://ai-api.test</code>
+    <strong>Base URL</strong>: <code>https://ai-ide-api.on-forge.com/</code>
 </aside>
 <pre><code>This documentation aims to provide all the information you need to work with our API.
 
@@ -134,14 +134,14 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://ai-api.test/api/versions" \
+    --get "https://ai-ide-api.on-forge.com/api/versions" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://ai-api.test/api/versions"
+    "https://ai-ide-api.on-forge.com/api/versions"
 );
 
 const headers = {
@@ -336,14 +336,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://ai-api.test/api/tools" \
+    --get "https://ai-ide-api.on-forge.com/api/tools" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://ai-api.test/api/tools"
+    "https://ai-ide-api.on-forge.com/api/tools"
 );
 
 const headers = {
@@ -585,14 +585,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://ai-api.test/api/tools/cursor" \
+    --get "https://ai-ide-api.on-forge.com/api/tools/cursor" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://ai-api.test/api/tools/cursor"
+    "https://ai-ide-api.on-forge.com/api/tools/cursor"
 );
 
 const headers = {
@@ -735,14 +735,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://ai-api.test/api/tools/cursor/versions" \
+    --get "https://ai-ide-api.on-forge.com/api/tools/cursor/versions" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://ai-api.test/api/tools/cursor/versions"
+    "https://ai-ide-api.on-forge.com/api/tools/cursor/versions"
 );
 
 const headers = {
@@ -901,14 +901,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://ai-api.test/api/tools/cursor/versions/2.0" \
+    --get "https://ai-ide-api.on-forge.com/api/tools/cursor/versions/2.0" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://ai-api.test/api/tools/cursor/versions/2.0"
+    "https://ai-ide-api.on-forge.com/api/tools/cursor/versions/2.0"
 );
 
 const headers = {

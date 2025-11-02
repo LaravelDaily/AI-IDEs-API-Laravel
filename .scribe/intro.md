@@ -3,7 +3,7 @@
 Documentation for the public API of AI IDEs and their versions
 
 <aside>
-    <strong>Base URL</strong>: <code>http://ai-api.test</code>
+    <strong>Base URL</strong>: <code>https://ai-ide-api.on-forge.com/</code>
 </aside>
 
     This documentation aims to provide all the information you need to work with our API.
