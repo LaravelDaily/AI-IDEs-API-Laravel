@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ClaudeCodeVersionSeeder::class);
         $this->call(CodexCLIVersionSeeder::class);
         $this->call(CursorVersionSeeder::class);
+        $this->call(AdminUserSeeder::class);
     }
 }
