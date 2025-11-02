@@ -15,7 +15,9 @@ class VersionController extends Controller
     */
     public function index(?string $slug = null): AnonymousResourceCollection
     {
-        $query = Version::query()->orderBy('release_date', 'desc');
+        $query = Version::query()
+            ->with('tool')
+            ->orderBy('release_date', 'desc');
 
         if ($slug === null) {
             // Return latest 10 versions across all tools

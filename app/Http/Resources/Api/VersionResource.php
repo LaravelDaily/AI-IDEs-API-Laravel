@@ -16,6 +16,7 @@ class VersionResource extends JsonResource
     {
         return [
             'version' => $this->version,
+            'tool' => $this->tool?->name,
             'release_date' => $this->release_date?->toDateString(),
             'description' => $this->description,
             'changelog_url' => $this->changelog_url,

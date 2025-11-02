@@ -33,6 +33,7 @@ test('index endpoint returns all versions for a tool ordered by release date des
             'data' => [
                 '*' => [
                     'version',
+                    'tool',
                     'release_date',
                     'description',
                     'changelog_url',
@@ -168,6 +169,7 @@ test('latest endpoint returns the latest 10 versions overall', function () {
             'data' => [
                 '*' => [
                     'version',
+                    'tool',
                     'release_date',
                     'description',
                     'changelog_url',

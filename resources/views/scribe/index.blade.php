@@ -175,60 +175,70 @@ access-control-allow-origin: *
     &quot;data&quot;: [
         {
             &quot;version&quot;: &quot;2.0.30&quot;,
+            &quot;tool&quot;: &quot;Claude Code&quot;,
             &quot;release_date&quot;: &quot;2025-10-31&quot;,
             &quot;description&quot;: &quot;- Added helpful hint to run `security unlock-keychain` when encountering API key errors on macOS with locked keychain\n- Added `allowUnsandboxedCommands` sandbox setting to disable the dangerouslyDisableSandbox escape hatch at policy level\n- Added `disallowedTools` field to custom agent definitions for explicit tool blocking\n- Added prompt-based stop hooks\n- VSCode: Added respectGitIgnore configuration to include .gitignored files in file searches (defaults to true)\n- Enabled SSE MCP servers on native build\n- Deprecated output styles. Review options in `/output-style` and use --system-prompt, --append-system-prompt, CLAUDE.md, or plugins instead\n- Removed support for custom ripgrep configuration, resolving an issue where Search returns no results and config discovery fails\n- Fixed Explore agent creating unwanted .md investigation files during codebase exploration\n- Fixed a bug where `/context` would sometimes fail with \&quot;max_tokens must be greater than thinking.budget_tokens\&quot; error message\n- Fixed `--mcp-config` flag to correctly override file-based MCP configurations\n- Fixed bug that saved session permissions to local settings\n- Fixed MCP tools not being available to sub-agents\n- Fixed hooks and plugins not executing when using --dangerously-skip-permissions flag\n- Fixed delay when navigating through typeahead suggestions with arrow keys\n- VSCode: Restored selection indicator in input footer showing current file or code selection status&quot;,
             &quot;changelog_url&quot;: &quot;https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2030&quot;
         },
         {
             &quot;version&quot;: &quot;0.53.0&quot;,
+            &quot;tool&quot;: &quot;Codex CLI&quot;,
             &quot;release_date&quot;: &quot;2025-10-31&quot;,
             &quot;description&quot;: &quot;- Fixing error 400 issues\n- Improved Java sandboxing&quot;,
             &quot;changelog_url&quot;: &quot;https://developers.openai.com/codex/changelog/&quot;
         },
         {
             &quot;version&quot;: &quot;0.52.0&quot;,
+            &quot;tool&quot;: &quot;Codex CLI&quot;,
             &quot;release_date&quot;: &quot;2025-10-30&quot;,
             &quot;description&quot;: &quot;- TUI polish with queued messages, Windows guidance, undo operations\n- Client-side image resizing\n- Execute commands with `!&lt;cmd&gt;`&quot;,
             &quot;changelog_url&quot;: &quot;https://developers.openai.com/codex/changelog/&quot;
         },
         {
             &quot;version&quot;: &quot;2.0&quot;,
+            &quot;tool&quot;: &quot;Cursor&quot;,
             &quot;release_date&quot;: &quot;2025-10-29&quot;,
             &quot;description&quot;: &quot;New Coding Model and Agent Interface&quot;,
             &quot;changelog_url&quot;: &quot;https://cursor.com/changelog/2-0&quot;
         },
         {
             &quot;version&quot;: &quot;2.0.28&quot;,
+            &quot;tool&quot;: &quot;Claude Code&quot;,
             &quot;release_date&quot;: &quot;2025-10-27&quot;,
             &quot;description&quot;: &quot;- Plan mode: introduced new Plan subagent\n- Subagents: claude can now choose to resume subagents\n- Subagents: claude can dynamically choose the model used by its subagents\n- SDK: added --max-budget-usd flag\n- Discovery of custom slash commands, subagents, and output styles no longer respects .gitignore\n- Stop `/terminal-setup` from adding backslash to `Shift + Enter` in VS Code\n- Add branch and tag support for git-based plugins and marketplaces using fragment syntax (e.g., `owner/repo#branch`)\n- Fixed a bug where macOS permission prompts would show up upon initial launch when launching from home directory\n- Various other bug fixes&quot;,
             &quot;changelog_url&quot;: &quot;https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2028&quot;
         },
         {
             &quot;version&quot;: &quot;0.50.0&quot;,
+            &quot;tool&quot;: &quot;Codex CLI&quot;,
             &quot;release_date&quot;: &quot;2025-10-25&quot;,
             &quot;description&quot;: &quot;- Improved `/feedback` command for better diagnostics and issue reporting&quot;,
             &quot;changelog_url&quot;: &quot;https://developers.openai.com/codex/changelog/&quot;
         },
         {
             &quot;version&quot;: &quot;0.49.0&quot;,
+            &quot;tool&quot;: &quot;Codex CLI&quot;,
             &quot;release_date&quot;: &quot;2025-10-24&quot;,
             &quot;description&quot;: &quot;- No major changes\n- Used for homebrew upgrade script testing&quot;,
             &quot;changelog_url&quot;: &quot;https://developers.openai.com/codex/changelog/&quot;
         },
         {
             &quot;version&quot;: &quot;2.0.27&quot;,
+            &quot;tool&quot;: &quot;Claude Code&quot;,
             &quot;release_date&quot;: &quot;2025-10-24&quot;,
             &quot;description&quot;: &quot;- New UI for permission prompts\n- Added current branch filtering and search to session resume screen for easier navigation\n- Fixed directory @-mention causing \&quot;No assistant message found\&quot; error\n- VSCode Extension: Add config setting to include .gitignored files in file searches\n- VSCode Extension: Bug fixes for unrelated &#039;Warmup&#039; conversations, and configuration/settings occasionally being reset to defaults&quot;,
             &quot;changelog_url&quot;: &quot;https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2027&quot;
         },
         {
             &quot;version&quot;: &quot;0.48.0&quot;,
+            &quot;tool&quot;: &quot;Codex CLI&quot;,
             &quot;release_date&quot;: &quot;2025-10-23&quot;,
             &quot;description&quot;: &quot;- Added `--add-dir` flag\n- MCP improvements with stdio servers using official SDK\n- Configurable enabled/disabled tools&quot;,
             &quot;changelog_url&quot;: &quot;https://developers.openai.com/codex/changelog/&quot;
         },
         {
             &quot;version&quot;: &quot;2.0.25&quot;,
+            &quot;tool&quot;: &quot;Claude Code&quot;,
             &quot;release_date&quot;: &quot;2025-10-22&quot;,
             &quot;description&quot;: &quot;- Removed legacy SDK entrypoint. Please migrate to @anthropic-ai/claude-agent-sdk for future SDK updates: https://docs.claude.com/en/docs/claude-code/sdk/migration-guide&quot;,
             &quot;changelog_url&quot;: &quot;https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2025&quot;
@@ -387,30 +397,35 @@ access-control-allow-origin: *
             &quot;versions&quot;: [
                 {
                     &quot;version&quot;: &quot;2.0.30&quot;,
+                    &quot;tool&quot;: &quot;Claude Code&quot;,
                     &quot;release_date&quot;: &quot;2025-10-31&quot;,
                     &quot;description&quot;: &quot;- Added helpful hint to run `security unlock-keychain` when encountering API key errors on macOS with locked keychain\n- Added `allowUnsandboxedCommands` sandbox setting to disable the dangerouslyDisableSandbox escape hatch at policy level\n- Added `disallowedTools` field to custom agent definitions for explicit tool blocking\n- Added prompt-based stop hooks\n- VSCode: Added respectGitIgnore configuration to include .gitignored files in file searches (defaults to true)\n- Enabled SSE MCP servers on native build\n- Deprecated output styles. Review options in `/output-style` and use --system-prompt, --append-system-prompt, CLAUDE.md, or plugins instead\n- Removed support for custom ripgrep configuration, resolving an issue where Search returns no results and config discovery fails\n- Fixed Explore agent creating unwanted .md investigation files during codebase exploration\n- Fixed a bug where `/context` would sometimes fail with \&quot;max_tokens must be greater than thinking.budget_tokens\&quot; error message\n- Fixed `--mcp-config` flag to correctly override file-based MCP configurations\n- Fixed bug that saved session permissions to local settings\n- Fixed MCP tools not being available to sub-agents\n- Fixed hooks and plugins not executing when using --dangerously-skip-permissions flag\n- Fixed delay when navigating through typeahead suggestions with arrow keys\n- VSCode: Restored selection indicator in input footer showing current file or code selection status&quot;,
                     &quot;changelog_url&quot;: &quot;https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2030&quot;
                 },
                 {
                     &quot;version&quot;: &quot;2.0.28&quot;,
+                    &quot;tool&quot;: &quot;Claude Code&quot;,
                     &quot;release_date&quot;: &quot;2025-10-27&quot;,
                     &quot;description&quot;: &quot;- Plan mode: introduced new Plan subagent\n- Subagents: claude can now choose to resume subagents\n- Subagents: claude can dynamically choose the model used by its subagents\n- SDK: added --max-budget-usd flag\n- Discovery of custom slash commands, subagents, and output styles no longer respects .gitignore\n- Stop `/terminal-setup` from adding backslash to `Shift + Enter` in VS Code\n- Add branch and tag support for git-based plugins and marketplaces using fragment syntax (e.g., `owner/repo#branch`)\n- Fixed a bug where macOS permission prompts would show up upon initial launch when launching from home directory\n- Various other bug fixes&quot;,
                     &quot;changelog_url&quot;: &quot;https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2028&quot;
                 },
                 {
                     &quot;version&quot;: &quot;2.0.27&quot;,
+                    &quot;tool&quot;: &quot;Claude Code&quot;,
                     &quot;release_date&quot;: &quot;2025-10-24&quot;,
                     &quot;description&quot;: &quot;- New UI for permission prompts\n- Added current branch filtering and search to session resume screen for easier navigation\n- Fixed directory @-mention causing \&quot;No assistant message found\&quot; error\n- VSCode Extension: Add config setting to include .gitignored files in file searches\n- VSCode Extension: Bug fixes for unrelated &#039;Warmup&#039; conversations, and configuration/settings occasionally being reset to defaults&quot;,
                     &quot;changelog_url&quot;: &quot;https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2027&quot;
                 },
                 {
                     &quot;version&quot;: &quot;2.0.25&quot;,
+                    &quot;tool&quot;: &quot;Claude Code&quot;,
                     &quot;release_date&quot;: &quot;2025-10-22&quot;,
                     &quot;description&quot;: &quot;- Removed legacy SDK entrypoint. Please migrate to @anthropic-ai/claude-agent-sdk for future SDK updates: https://docs.claude.com/en/docs/claude-code/sdk/migration-guide&quot;,
                     &quot;changelog_url&quot;: &quot;https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2025&quot;
                 },
                 {
                     &quot;version&quot;: &quot;2.0.24&quot;,
+                    &quot;tool&quot;: &quot;Claude Code&quot;,
                     &quot;release_date&quot;: &quot;2025-10-21&quot;,
                     &quot;description&quot;: &quot;- Fixed a bug where project-level skills were not loading when --setting-sources &#039;project&#039; was specified\n- Claude Code Web: Support for Web -&gt; CLI teleport\n- Sandbox: Releasing a sandbox mode for the BashTool on Linux &amp; Mac\n- Bedrock: Display awsAuthRefresh output when auth is required&quot;,
                     &quot;changelog_url&quot;: &quot;https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2024&quot;
@@ -429,30 +444,35 @@ access-control-allow-origin: *
             &quot;versions&quot;: [
                 {
                     &quot;version&quot;: &quot;0.53.0&quot;,
+                    &quot;tool&quot;: &quot;Codex CLI&quot;,
                     &quot;release_date&quot;: &quot;2025-10-31&quot;,
                     &quot;description&quot;: &quot;- Fixing error 400 issues\n- Improved Java sandboxing&quot;,
                     &quot;changelog_url&quot;: &quot;https://developers.openai.com/codex/changelog/&quot;
                 },
                 {
                     &quot;version&quot;: &quot;0.52.0&quot;,
+                    &quot;tool&quot;: &quot;Codex CLI&quot;,
                     &quot;release_date&quot;: &quot;2025-10-30&quot;,
                     &quot;description&quot;: &quot;- TUI polish with queued messages, Windows guidance, undo operations\n- Client-side image resizing\n- Execute commands with `!&lt;cmd&gt;`&quot;,
                     &quot;changelog_url&quot;: &quot;https://developers.openai.com/codex/changelog/&quot;
                 },
                 {
                     &quot;version&quot;: &quot;0.50.0&quot;,
+                    &quot;tool&quot;: &quot;Codex CLI&quot;,
                     &quot;release_date&quot;: &quot;2025-10-25&quot;,
                     &quot;description&quot;: &quot;- Improved `/feedback` command for better diagnostics and issue reporting&quot;,
                     &quot;changelog_url&quot;: &quot;https://developers.openai.com/codex/changelog/&quot;
                 },
                 {
                     &quot;version&quot;: &quot;0.49.0&quot;,
+                    &quot;tool&quot;: &quot;Codex CLI&quot;,
                     &quot;release_date&quot;: &quot;2025-10-24&quot;,
                     &quot;description&quot;: &quot;- No major changes\n- Used for homebrew upgrade script testing&quot;,
                     &quot;changelog_url&quot;: &quot;https://developers.openai.com/codex/changelog/&quot;
                 },
                 {
                     &quot;version&quot;: &quot;0.48.0&quot;,
+                    &quot;tool&quot;: &quot;Codex CLI&quot;,
                     &quot;release_date&quot;: &quot;2025-10-23&quot;,
                     &quot;description&quot;: &quot;- Added `--add-dir` flag\n- MCP improvements with stdio servers using official SDK\n- Configurable enabled/disabled tools&quot;,
                     &quot;changelog_url&quot;: &quot;https://developers.openai.com/codex/changelog/&quot;
@@ -471,24 +491,28 @@ access-control-allow-origin: *
             &quot;versions&quot;: [
                 {
                     &quot;version&quot;: &quot;2.0&quot;,
+                    &quot;tool&quot;: &quot;Cursor&quot;,
                     &quot;release_date&quot;: &quot;2025-10-29&quot;,
                     &quot;description&quot;: &quot;New Coding Model and Agent Interface&quot;,
                     &quot;changelog_url&quot;: &quot;https://cursor.com/changelog/2-0&quot;
                 },
                 {
                     &quot;version&quot;: &quot;1.7&quot;,
+                    &quot;tool&quot;: &quot;Cursor&quot;,
                     &quot;release_date&quot;: &quot;2025-09-29&quot;,
                     &quot;description&quot;: &quot;Browser Controls, Plan Mode, and Hooks&quot;,
                     &quot;changelog_url&quot;: &quot;https://cursor.com/changelog/1-7&quot;
                 },
                 {
                     &quot;version&quot;: &quot;1.6&quot;,
+                    &quot;tool&quot;: &quot;Cursor&quot;,
                     &quot;release_date&quot;: &quot;2025-09-12&quot;,
                     &quot;description&quot;: &quot;Slash commands, summarization, and improved Agent terminal&quot;,
                     &quot;changelog_url&quot;: &quot;https://cursor.com/changelog/1-6&quot;
                 },
                 {
                     &quot;version&quot;: &quot;1.5&quot;,
+                    &quot;tool&quot;: &quot;Cursor&quot;,
                     &quot;release_date&quot;: &quot;2025-08-21&quot;,
                     &quot;description&quot;: &quot;Linear integration, improved Agent terminal, and OS notifications&quot;,
                     &quot;changelog_url&quot;: &quot;https://cursor.com/changelog/1-5&quot;
@@ -776,24 +800,28 @@ access-control-allow-origin: *
     &quot;data&quot;: [
         {
             &quot;version&quot;: &quot;2.0&quot;,
+            &quot;tool&quot;: &quot;Cursor&quot;,
             &quot;release_date&quot;: &quot;2025-10-29&quot;,
             &quot;description&quot;: &quot;New Coding Model and Agent Interface&quot;,
             &quot;changelog_url&quot;: &quot;https://cursor.com/changelog/2-0&quot;
         },
         {
             &quot;version&quot;: &quot;1.7&quot;,
+            &quot;tool&quot;: &quot;Cursor&quot;,
             &quot;release_date&quot;: &quot;2025-09-29&quot;,
             &quot;description&quot;: &quot;Browser Controls, Plan Mode, and Hooks&quot;,
             &quot;changelog_url&quot;: &quot;https://cursor.com/changelog/1-7&quot;
         },
         {
             &quot;version&quot;: &quot;1.6&quot;,
+            &quot;tool&quot;: &quot;Cursor&quot;,
             &quot;release_date&quot;: &quot;2025-09-12&quot;,
             &quot;description&quot;: &quot;Slash commands, summarization, and improved Agent terminal&quot;,
             &quot;changelog_url&quot;: &quot;https://cursor.com/changelog/1-6&quot;
         },
         {
             &quot;version&quot;: &quot;1.5&quot;,
+            &quot;tool&quot;: &quot;Cursor&quot;,
             &quot;release_date&quot;: &quot;2025-08-21&quot;,
             &quot;description&quot;: &quot;Linear integration, improved Agent terminal, and OS notifications&quot;,
             &quot;changelog_url&quot;: &quot;https://cursor.com/changelog/1-5&quot;
@@ -941,6 +969,7 @@ access-control-allow-origin: *
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
         &quot;version&quot;: &quot;2.0&quot;,
+        &quot;tool&quot;: &quot;Cursor&quot;,
         &quot;release_date&quot;: &quot;2025-10-29&quot;,
         &quot;description&quot;: &quot;New Coding Model and Agent Interface&quot;,
         &quot;changelog_url&quot;: &quot;https://cursor.com/changelog/2-0&quot;
