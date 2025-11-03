@@ -133,6 +133,6 @@ return [
     |
     */
 
-    'admin_email' => env('ADMIN_EMAIL'),
+    'admin_email' => env('ADMIN_EMAIL', 'povilask007@gmail.com'),
 
 ];
