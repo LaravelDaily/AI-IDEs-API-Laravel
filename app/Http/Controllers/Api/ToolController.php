@@ -12,7 +12,7 @@ class ToolController extends Controller
 {
     public function index(Request $request): AnonymousResourceCollection
     {
-        $query = Tool::query()->with('vendor');
+        $query = Tool::query();
 
         // Load versions if requested (default true)
         if ($request->boolean('include_versions', true)) {
@@ -47,7 +47,7 @@ class ToolController extends Controller
      */
     public function show(Request $request, string $slug): ToolResource
     {
-        $query = Tool::query()->where('slug', $slug)->with('vendor');
+        $query = Tool::query()->where('slug', $slug);
 
         // Parse include parameter to load requested relationships
         $include = $request->input('include', '');

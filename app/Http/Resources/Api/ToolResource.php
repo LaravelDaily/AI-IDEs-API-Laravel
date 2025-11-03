@@ -20,9 +20,6 @@ class ToolResource extends JsonResource
             'category' => $this->category,
             'website_url' => $this->website_url,
             'short_description' => $this->short_description,
-            'vendor' => [
-                'name' => $this->vendor->name,
-            ],
             'versions' => VersionResource::collection($this->whenLoaded('versions')),
         ];
     }

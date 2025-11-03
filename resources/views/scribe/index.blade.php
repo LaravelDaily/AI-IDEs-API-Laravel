@@ -97,7 +97,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: November 2, 2025</li>
+        <li>Last updated: November 3, 2025</li>
     </ul>
 </div>
 
@@ -181,7 +181,7 @@ access-control-allow-origin: *
             &quot;changelog_url&quot;: &quot;https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2030&quot;
         },
         {
-            &quot;version&quot;: &quot;0.53.0&quot;,
+            &quot;version&quot;: &quot;0.53.1&quot;,
             &quot;tool&quot;: &quot;Codex CLI&quot;,
             &quot;release_date&quot;: &quot;2025-10-31&quot;,
             &quot;description&quot;: &quot;- Fixing error 400 issues\n- Improved Java sandboxing&quot;,
@@ -391,9 +391,6 @@ access-control-allow-origin: *
             &quot;category&quot;: &quot;CLI&quot;,
             &quot;website_url&quot;: &quot;https://www.claude.com/product/claude-code&quot;,
             &quot;short_description&quot;: &quot;&quot;,
-            &quot;vendor&quot;: {
-                &quot;name&quot;: &quot;Anthropic&quot;
-            },
             &quot;versions&quot;: [
                 {
                     &quot;version&quot;: &quot;2.0.30&quot;,
@@ -438,12 +435,9 @@ access-control-allow-origin: *
             &quot;category&quot;: &quot;CLI&quot;,
             &quot;website_url&quot;: &quot;https://developers.openai.com/codex/cli/&quot;,
             &quot;short_description&quot;: &quot;&quot;,
-            &quot;vendor&quot;: {
-                &quot;name&quot;: &quot;OpenAI&quot;
-            },
             &quot;versions&quot;: [
                 {
-                    &quot;version&quot;: &quot;0.53.0&quot;,
+                    &quot;version&quot;: &quot;0.53.1&quot;,
                     &quot;tool&quot;: &quot;Codex CLI&quot;,
                     &quot;release_date&quot;: &quot;2025-10-31&quot;,
                     &quot;description&quot;: &quot;- Fixing error 400 issues\n- Improved Java sandboxing&quot;,
@@ -485,9 +479,6 @@ access-control-allow-origin: *
             &quot;category&quot;: &quot;IDE&quot;,
             &quot;website_url&quot;: &quot;https://cursor.com&quot;,
             &quot;short_description&quot;: &quot;&quot;,
-            &quot;vendor&quot;: {
-                &quot;name&quot;: &quot;Cursor&quot;
-            },
             &quot;versions&quot;: [
                 {
                     &quot;version&quot;: &quot;2.0&quot;,
@@ -652,10 +643,7 @@ access-control-allow-origin: *
         &quot;slug&quot;: &quot;cursor&quot;,
         &quot;category&quot;: &quot;IDE&quot;,
         &quot;website_url&quot;: &quot;https://cursor.com&quot;,
-        &quot;short_description&quot;: &quot;&quot;,
-        &quot;vendor&quot;: {
-            &quot;name&quot;: &quot;Cursor&quot;
-        }
+        &quot;short_description&quot;: &quot;&quot;
     }
 }</code>
  </pre>
