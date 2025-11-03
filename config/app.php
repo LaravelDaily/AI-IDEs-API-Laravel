@@ -123,4 +123,16 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Administrator Email
+    |--------------------------------------------------------------------------
+    |
+    | This email address will receive notifications about important events
+    | in the application, such as new tool version releases.
+    |
+    */
+
+    'admin_email' => env('ADMIN_EMAIL'),
+
 ];
