@@ -46,7 +46,7 @@ class WindsurfVersionSeeder extends Seeder
 - Resolved issues affecting SSH remote connections with high resource usage.
 - Fix certain models seeing increased error rates on editing files.
 - Improved diagnostics for third party extensions.',
-                'release_date' => null,
+                'release_date' => '2025-10-17',
             ],
             [
                 'version' => '1.12.20',
@@ -54,7 +54,7 @@ class WindsurfVersionSeeder extends Seeder
 - Fixed issues with WSL compatibility.
 - Fixed bugs in Workflows and Rules UI.
 - Various stability improvements and minor bug fixes.',
-                'release_date' => null,
+                'release_date' => '2025-10-16',
             ],
             [
                 'version' => '1.12.18',
@@ -62,13 +62,47 @@ class WindsurfVersionSeeder extends Seeder
 - Improvements and bug fixes for the beta Codemaps feature.
 - Fixes issue where some bash commands would get stuck.
 - Fixes issue where certain models couldn\'t create or edit Jupyter notebooks.',
-                'release_date' => null,
+                'release_date' => '2025-10-14',
             ],
             [
                 'version' => '1.12.16',
                 'description' => '- Grok Code Fast 1 is now available in Windsurf for Pro and Teams users!
 - We\'re excited to enable it for free (0x credits) for a limited time.',
-                'release_date' => null,
+                'release_date' => '2025-10-10',
+            ],
+            [
+                'version' => '1.12.12',
+                'description' => 'Claude Sonnet 4.5 is now available',
+                'release_date' => '2025-09-29',
+            ],
+            [
+                'version' => '1.12.11',
+                'description' => '- Fix using MCP tools with certain models.
+- Fixes to terminal issues on Windows.',
+                'release_date' => '2025-09-26',
+            ],
+            [
+                'version' => '1.12.9',
+                'description' => '- Fix to Cascade slowness issues',
+                'release_date' => '2025-09-24',
+            ],
+            [
+                'version' => '1.12.8',
+                'description' => 'GPT-5-Codex is now available for free (0x credits) for a limited time for paid users!',
+                'release_date' => '2025-09-23',
+            ],
+            [
+                'version' => '1.12.6',
+                'description' => '- Cascade Improvements. Queued messages: Users can now add follow-up messages to Cascade while it is working, and Cascade will process them in order after the current task is complete.
+- Cascade now renders mermaid diagrams in the conversation.
+- Windsurf Browser is now deprecated.',
+                'release_date' => '2025-09-16',
+            ],
+            [
+                'version' => '1.12.2',
+                'description' => '- Grok Code Fast 1 is now available in Windsurf for Pro and Teams users! We\'re excited to enable it for free (0x credits) for a limited time.
+- Starting on Tuesday, August 26, our GPT-5 promotion will end for all users.',
+                'release_date' => '2025-08-25',
             ],
             [
                 'version' => '1.12.1',
