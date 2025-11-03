@@ -91,9 +91,7 @@
             </div>
 
     <ul class="toc-footer" id="toc-footer">
-                    <li style="padding-bottom: 5px;"><a href="{{ route("scribe.postman") }}">View Postman collection</a></li>
-                            <li style="padding-bottom: 5px;"><a href="{{ route("scribe.openapi") }}">View OpenAPI spec</a></li>
-                <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                        <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
     </ul>
 
     <ul class="toc-footer" id="last-updated">
@@ -506,6 +504,13 @@ access-control-allow-origin: *
                     &quot;changelog_url&quot;: &quot;https://cursor.com/changelog/1-5&quot;
                 }
             ]
+        },
+        {
+            &quot;name&quot;: &quot;Windsurf&quot;,
+            &quot;slug&quot;: &quot;windsurf&quot;,
+            &quot;category&quot;: &quot;IDE&quot;,
+            &quot;website_url&quot;: &quot;https://windsurf.com&quot;,
+            &quot;versions&quot;: []
         }
     ]
 }</code>
