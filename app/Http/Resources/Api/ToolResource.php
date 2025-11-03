@@ -19,7 +19,6 @@ class ToolResource extends JsonResource
             'slug' => $this->slug,
             'category' => $this->category,
             'website_url' => $this->website_url,
-            'short_description' => $this->short_description,
             'versions' => VersionResource::collection($this->whenLoaded('versions')),
         ];
     }

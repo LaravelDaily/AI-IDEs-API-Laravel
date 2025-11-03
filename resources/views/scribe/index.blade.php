@@ -390,7 +390,6 @@ access-control-allow-origin: *
             &quot;slug&quot;: &quot;claude-code&quot;,
             &quot;category&quot;: &quot;CLI&quot;,
             &quot;website_url&quot;: &quot;https://www.claude.com/product/claude-code&quot;,
-            &quot;short_description&quot;: &quot;&quot;,
             &quot;versions&quot;: [
                 {
                     &quot;version&quot;: &quot;2.0.30&quot;,
@@ -434,7 +433,6 @@ access-control-allow-origin: *
             &quot;slug&quot;: &quot;codex-cli&quot;,
             &quot;category&quot;: &quot;CLI&quot;,
             &quot;website_url&quot;: &quot;https://developers.openai.com/codex/cli/&quot;,
-            &quot;short_description&quot;: &quot;&quot;,
             &quot;versions&quot;: [
                 {
                     &quot;version&quot;: &quot;0.53.1&quot;,
@@ -478,7 +476,6 @@ access-control-allow-origin: *
             &quot;slug&quot;: &quot;cursor&quot;,
             &quot;category&quot;: &quot;IDE&quot;,
             &quot;website_url&quot;: &quot;https://cursor.com&quot;,
-            &quot;short_description&quot;: &quot;&quot;,
             &quot;versions&quot;: [
                 {
                     &quot;version&quot;: &quot;2.0&quot;,
@@ -642,8 +639,7 @@ access-control-allow-origin: *
         &quot;name&quot;: &quot;Cursor&quot;,
         &quot;slug&quot;: &quot;cursor&quot;,
         &quot;category&quot;: &quot;IDE&quot;,
-        &quot;website_url&quot;: &quot;https://cursor.com&quot;,
-        &quot;short_description&quot;: &quot;&quot;
+        &quot;website_url&quot;: &quot;https://cursor.com&quot;
     }
 }</code>
  </pre>

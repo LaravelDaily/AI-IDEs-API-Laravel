@@ -22,7 +22,6 @@ test('it returns a list of tools with default settings', function () {
                     'slug',
                     'category',
                     'website_url',
-                    'short_description',
                     'versions',
                 ],
             ],
@@ -118,7 +117,6 @@ test('show endpoint returns a single tool by slug', function () {
                 'slug',
                 'category',
                 'website_url',
-                'short_description',
             ],
         ])
         ->assertJsonPath('data.name', 'Test Tool')
