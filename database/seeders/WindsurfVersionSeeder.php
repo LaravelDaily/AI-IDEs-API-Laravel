@@ -113,7 +113,7 @@ class WindsurfVersionSeeder extends Seeder
 - Tab Autocomplete: New system with more frequent and smarter suggestions.
 - UI Redesign: All-new Chat, Cascade, and home screen panels.
 - Dev Containers: Support for development containers via remote SSH access.',
-                'release_date' => null,
+                'release_date' => '2025-08-14',
             ],
         ];
 
