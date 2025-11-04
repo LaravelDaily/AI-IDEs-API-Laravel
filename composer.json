@@ -10,6 +10,7 @@
         "filament/filament": "^4.1",
         "knuckleswtf/scribe": "^5.5",
         "laravel/framework": "^12.0",
+        "laravel/nightwatch": "^1.18",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
         "symfony/http-client": "^7.3",
